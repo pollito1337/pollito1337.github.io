@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pollito</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">pollito</div>
+      <nav>
+        <a href="#about">about me</a>
+        <a href="#setup">Setup</a>
+        <a href="#content">content</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </nav>
+      <a href="cs2.html" target="_blank" id="cta-join" class="btn-outline">
+        Cs2
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1 class="hero-title">I’m <span>Pollito</span></h1>
+        <p class="hero-sub">Content creator & gamer · Canary Islands · Clips, streams and configs</p>
+
+        <div class="hero-actions">
+          <a href="#content" class="btn-solid">watch content</a>
+          <a href="#projects" class="btn-link">my projects</a>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong>16</strong><span>years</span></div>
+          <div><strong>CS2 / Valorant</strong><span>competition</span></div>
+          <div><strong>Canarias</strong><span>location</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="portrait-wrap">
+          <img src="images/perfil.jpg" alt="Foto de Pollito" class="portrait">
+          <div class="portrait-ring"></div>
+        </div>
+        <div class="mini-player">
+          <img src="images/default-cover.jpg" alt="cover" id="mini-cover" class="mini-cover">
+          <div class="mini-meta">
+            <div id="mini-title">Legends</div>
+            <div class="mini-controls">
+              <button id="mini-prev"><i class="fas fa-backward"></i></button>
+              <button id="mini-play"><i class="fas fa-play"></i></button>
+              <button id="mini-next"><i class="fas fa-forward"></i></button>
+              <audio id="audio-player"></audio>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-divider" width="100%" height="60" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,20 C20,0 80,0 100,20 L100,100 L0,100 Z" fill="#fff"></path>
+    </svg>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-grid about-grid">
+        <div class="about-card">
+          <h2>Sobre mí</h2>
+          <p>I’m Aitor — known as <strong>Pollito</strong>. I create gaming content, upload clips and stream games. I am passionate about improving my setup, optimizing configurations and sharing knowledge with the community.</p>
+          <ul class="about-list">
+            <li><i class="fas fa-gamepad"></i> competitive player (CS2 / Valorant)</li>
+            <li><i class="fas fa-video"></i> Streamer</li>
+            <li><i class="fas fa-cogs"></i> Configs</li>
+          </ul>
+        </div>
+
+        <div class="skills-card">
+          <h3>skills</h3>
+          <div class="skills-grid">
+            <div class="skill">video editing</div>
+            <div class="skill">Twitch streaming</div>
+            <div class="skill">game settings</div>
+            <div class="skill">Community & moderation</div>
+            <div class="skill">PC building</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="setup" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center">My Setup</h2>
+      <div class="setup-grid">
+        <div class="setup-card">
+          <div class="setup-icon">CPU</div>
+          <div class="setup-desc"><strong>Intel Core i7-11700F</strong><span>Procesador</span></div>
+        </div>
+        <div class="setup-card">
+          <div class="setup-icon">GPU</div>
+          <div class="setup-desc"><strong>RTX 3060 Ti</strong><span>Tarjeta gráfica</span></div>
+        </div>
+        <div class="setup-card">
+          <div class="setup-icon">RAM</div>
+          <div class="setup-desc"><strong>HyperX Fury 16GB</strong><span>Memoria</span></div>
+        </div>
+        <div class="setup-card">
+          <div class="setup-icon">MON</div>
+          <div class="setup-desc"><strong>AOC 25G3ZM</strong><span>240 Hz</span></div>
+        </div>
+        <div class="setup-card">
+          <div class="setup-icon">MOU</div>
+          <div class="setup-desc"><strong>Razer Viper V3 Pro</strong><span>Mouse</span></div>
+        </div>
+        <div class="setup-card">
+          <div class="setup-icon">KBD</div>
+          <div class="setup-desc"><strong>Apex Pro TKL</strong><span>Teclado</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content" class="section">
+    <div class="container">
+      <h2 class="section-title">Content & Social</h2>
+      <p class="muted center">Follow my platforms - there you will find streams, clips and exclusive content.</p>
+
+      <div class="social-grid">
+        <a class="social-card" href="https://youtube.com/@pollito-p7k" target="_blank">
+          <div class="icon"><i class="fab fa-youtube"></i></div>
+          <div class="meta"><strong>YouTube</strong><span></span></div>
+        </a>
+
+        <a class="social-card" href="https://twitch.tv/aitorgs10" target="_blank">
+          <div class="icon"><i class="fab fa-twitch"></i></div>
+          <div class="meta"><strong>Twitch</strong><span></span></div>
+        </a>
+
+        <a class="social-card" href="https://www.tiktok.com/@pollito99998" target="_blank">
+          <div class="icon"><i class="fab fa-tiktok"></i></div>
+          <div class="meta"><strong>TikTok</strong><span></span></div>
+        </a>
+
+        <a class="social-card" href="https://x.com/pollito1337" target="_blank">
+          <div class="icon"><i class="fab fa-x-twitter"></i></div>
+          <div class="meta"><strong>X</strong><span></span></div>
+        </a>
+
+        <a class="social-card" href="https://instagram.com/tuusuario" target="_blank">
+          <div class="icon"><i class="fab fa-instagram"></i></div>
+          <div class="meta"><strong>Instagram</strong><span></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title center">featured projects</h2>
+
+      <div class="projects-grid">
+        <article class="project-card" data-title="Clip Highlight #1" data-desc="dogshit clip" data-img="images/project1.png" data-link="https://www.twitch.tv/aitorgs10/clip/ExuberantBoxyLapwingFunRun-XCbocYmGXAchrtom">
+          <img src="images/project1.png" alt="Project 1">
+          <div class="project-meta">
+            <h3>Clip Highlight #1</h3>
+            <p>Best moments & montajes</p>
+            <button class="btn-outline open-project">Ver</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-title="Clip Highlight #2" data-desc="2 hs Desert Eagle" data-img="images/project2.png" data-link="https://www.twitch.tv/aitorgs10/clip/BovineModernKangarooTBCheesePull-E47AoyQ7fmG8jhPP">
+          <img src="images/project2.png" alt="Project 2">
+          <div class="project-meta">
+            <h3>Clip Highlight #2</h3>
+            <p>Best moments & montajes</p>
+            <button class="btn-outline open-project">Ver</button>
+          </div>
+        </article>
+
+        <article class="project-card" data-title="Montaje PC" data-desc="Cs2 ACE (good clip)" data-img="images/project3.png" data-link="https://www.youtube.com/watch?v=1we2a8qryic">
+          <img src="images/project3.png" alt="Project 3">
+          <div class="project-meta">
+            <h3>Clip Highlight #3</h3>
+            <p>Best moments & montajes</p>
+            <button class="btn-outline open-project">Ver</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+
+
+        <aside class="contact-info">
+          <h3>Social</h3>
+          <ul class="contact-list">
+            <li><i class="fab fa-youtube"></i> YouTube — <a href="https://youtube.com/@pollito-p7k" target="_blank">.­</a></li>
+            <li><i class="fab fa-twitch"></i> Twitch — <a href="https://twitch.tv/aitorgs10" target="_blank">.­</a></li>
+            <li><i class="fab fa-tiktok"></i> TikTok — <a href="https://www.tiktok.com/@pollito99998" target="_blank">­.</a></li>
+          </ul>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <button id="modal-close" class="modal-close"><i class="fas fa-times"></i></button>
+      <img id="modal-img" src="" alt="">
+      <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-desc"></p>
+        <div class="modal-actions">
+          <a id="modal-link" href="#" target="_blank" class="btn-solid">open</a>
+          <button id="modal-close2" class="btn-link">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© 2025 Pollito</div>
+      <div class="footer-links"><a href="#contact">Contacto</a> · <a href="#projects">projects</a></div>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
