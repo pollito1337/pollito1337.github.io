@@ -16,6 +16,12 @@
 </head>
 <body>
 
+<div class="hud">
+  <div class="hud-item">FPS: <span id="fps">144</span></div>
+  <div class="hud-item">PING: <span id="ping">28</span>ms</div>
+  <div class="hud-item online">● ONLINE</div>
+</div>
+
 <header class="nav">
   <div class="nav-inner">
     <div class="brand">pollito</div>
@@ -32,7 +38,7 @@
 <section class="hero" id="home">
   <div class="hero-inner">
     <div class="hero-left">
-      <h1 class="hero-title">I’m <span>Pollito</span></h1>
+      <h1 class="hero-title typing">I’m <span id="typing-name"></span></h1>
       <p class="hero-sub">CS2 / Valorant gamer · Canary Islands · Clips, streams and configs</p>
       <div class="hero-actions">
         <a href="#content" class="btn-solid">watch content</a>
@@ -151,6 +157,24 @@
       </div>
     </div>
   </div>
+</div>
+
+<section class="section" id="reels">
+  <div class="container">
+    <h2 class="section-title center">Reels</h2>
+
+    <div class="reels">
+      <video src="videos/clip1.mp4" autoplay muted loop></video>
+      <video src="videos/clip2.mp4" autoplay muted loop></video>
+      <video src="videos/clip3.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+</section>
+
+<div class="live-status">
+  <div class="live-dot"></div>
+  <span>LIVE NOW</span>
+  <a href="https://twitch.tv/pollito1437" target="_blank">Watch</a>
 </div>
 
 <footer class="footer">
