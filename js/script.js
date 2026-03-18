@@ -255,4 +255,9 @@ document.querySelectorAll('.hero-stats strong').forEach(el => {
   });
 });
 
+document.getElementById('cta-join').addEventListener('click', (e)=>{
+    e.preventDefault();
+    window.open('https://github.com/pollito1337', '_blank');
+});
+
 });
