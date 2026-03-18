@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Header y Hero Animations
   gsap.from('.brand', {opacity:0, y:-8, duration:0.6, delay:0.1});
   gsap.from('.nav-inner nav a', {opacity:0, y:-6, stagger:0.06, duration:0.45, delay:0.12});
   gsap.from('.hero-left .hero-title', {opacity:0, y:40, duration:0.9, delay:0.18, ease:'power4.out'});
   gsap.from('.hero-left .hero-sub', {opacity:0, y:30, duration:0.8, delay:0.28});
   gsap.from('.portrait-wrap', {opacity:0, x:60, duration:0.9, delay:0.3, ease:'power3.out'});
 
-  // Animaciones de secciones
   gsap.utils.toArray('.section').forEach(section => {
     gsap.from(section.querySelectorAll('*'), {
       opacity: 0,
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Efecto 3D en cards de proyectos
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Modal de proyectos
   const openBtns = document.querySelectorAll('.open-project');
   const modal = document.getElementById('project-modal');
   const modalImg = document.getElementById('modal-img');
@@ -66,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
   modalClose2.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
 
-  // Scroll suave
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
     a.addEventListener('click', (e)=>{
       const href = a.getAttribute('href');
@@ -78,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Formulario de contacto (simulado)
   const form = document.getElementById('contact-form');
   if(form){
     form.addEventListener('submit', (e) => {
@@ -101,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mini-player de música
   const playlist = [
     {name:'Legends', cover:'images/cover1.jpg', file:'music/Legends.mp3'},
     {name:'All Girls Are The Same', cover:'images/cover2.jpg', file:'music/All Girls Are The Same.mp3'},
@@ -143,19 +136,123 @@ document.addEventListener('DOMContentLoaded', () => {
   audio.addEventListener('ended', () => changeSong(1));
   loadSong(idx);
 
-  // CTA Join Scroll
   document.getElementById('cta-join').addEventListener('click', ()=> {
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
   });
 
-  // Escape para cerrar modal
   window.addEventListener('keydown', (e) => {
     if(e.key === 'Escape') modal.setAttribute('aria-hidden','true');
   });
 
-  // Lazy load images
   document.querySelectorAll('img').forEach(img=>{
     if(!img.getAttribute('loading')) img.setAttribute('loading','lazy');
   });
+
+const typingEl = document.getElementById("typing-name");
+if (typingEl){
+  const text = "Pollito";
+  let i = 0;
+  function type(){
+    if(i < text.length){
+      typingEl.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, 120);
+    }
+  }
+  type();
+}
+
+let lastScroll = 0;
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+  if(currentScroll > lastScroll && currentScroll > 100){
+    nav.classList.add('hidden');
+  } else {
+    nav.classList.remove('hidden');
+  }
+  lastScroll = currentScroll;
+});
+
+let cursorPro = document.querySelector('.cursor-glow');
+if(!cursorPro){
+  cursorPro = document.createElement('div');
+  cursorPro.classList.add('cursor-glow');
+  cursorPro.style.position = 'fixed';
+  cursorPro.style.width = '14px';
+  cursorPro.style.height = '14px';
+  cursorPro.style.borderRadius = '50%';
+  cursorPro.style.background = '#00ff9c';
+  cursorPro.style.pointerEvents = 'none';
+  cursorPro.style.zIndex = '9999';
+  cursorPro.style.boxShadow = '0 0 15px #00ff9c, 0 0 25px #00ff9c';
+  cursorPro.style.transition = 'transform 0.1s ease-out';
+  document.body.appendChild(cursorPro);
+}
+
+const trail = [];
+const trailCount = 8;
+for(let i=0; i<trailCount; i++){
+  const t = document.createElement('div');
+  t.classList.add('cursor-trail');
+  t.style.position = 'fixed';
+  t.style.width = `${14 - i*1.5}px`;
+  t.style.height = `${14 - i*1.5}px`;
+  t.style.borderRadius = '50%';
+  t.style.background = 'rgba(0,255,156,' + (0.3 - i*0.03) + ')';
+  t.style.pointerEvents = 'none';
+  t.style.zIndex = '9998';
+  document.body.appendChild(t);
+  trail.push(t);
+}
+
+window.addEventListener('mousemove', e => {
+  cursorPro.style.left = e.clientX + 'px';
+  cursorPro.style.top = e.clientY + 'px';
+  trail.forEach((t, index) => {
+    gsap.to(t, {left:e.clientX, top:e.clientY, duration:0.1 + index*0.03, ease:'power1.out'});
+  });
+});
+
+document.addEventListener('click', e => {
+  for(let i=0;i<8;i++){
+    const p = document.createElement('div');
+    p.style.position = 'fixed';
+    p.style.width = '6px';
+    p.style.height = '6px';
+    p.style.borderRadius = '50%';
+    p.style.background = '#00ff9c';
+    p.style.left = e.clientX + 'px';
+    p.style.top = e.clientY + 'px';
+    p.style.pointerEvents = 'none';
+    p.style.zIndex = '9999';
+    document.body.appendChild(p);
+
+    const angle = Math.random()*Math.PI*2;
+    const radius = 30 + Math.random()*20;
+
+    gsap.to(p, {
+      x: Math.cos(angle)*radius,
+      y: Math.sin(angle)*radius,
+      opacity:0,
+      duration:0.6 + Math.random()*0.3,
+      ease:'power2.out',
+      onComplete: ()=> p.remove()
+    });
+  }
+});
+
+document.querySelectorAll('.hero-stats strong').forEach(el => {
+  gsap.from(el, {
+    textContent: 0,
+    duration: 1.5,
+    ease: "power1.out",
+    snap: { textContent: 1 },
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%"
+    }
+  });
+});
 
 });
