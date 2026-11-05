@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f0d0e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Pollito · Clips, directos y config de CS2</title>
+<meta name="description" content="Pollito (Aitor): creador de contenido y jugador competitivo de CS2 y Valorant desde Canarias. Clips, directos y mi config.">
+<meta property="og:title" content="Pollito">
+<meta property="og:description" content="Clips, directos y config de CS2.">
+<meta property="og:image" content="images/perfil.webp">
+</head>
+<body>
+<a class="skip" href="#top">Saltar al contenido</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Pollito</a>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><i class="fas fa-bars"></i></button>
+  <nav id="menu">
+    <a href="#sobre-mi">Sobre mí</a><a href="#setup">Setup</a><a href="#clips">Clips</a><a href="#redes">Redes</a>
+  </nav>
+  <a class="btn" href="cs2.html">Config CS2</a>
+</div></header>
+
+<main id="top">
+<section class="hero" id="hero"><div class="wrap">
+  <div>
+    <h1>Pollito</h1>
+    <p class="lead">Creo contenido de videojuegos y juego CS2 y Valorant en competitivo. Clips, directos y configs.</p>
+    <div class="actions">
+      <a class="btn gold" href="#clips">Ver clips</a>
+      <a class="btn" href="cs2.html">Mi config de CS2</a>
+    </div>
+    <ul class="facts"><li>17 años</li><li>CS2 y Valorant</li><li>Canarias</li></ul>
+  </div>
+  <div>
+    <div class="scope">
+      <img src="images/perfil.jpg" alt="Foto de Pollito" width="200" height="200">
+      <span class="tick t"></span><span class="tick b"></span><span class="tick l"></span><span class="tick r"></span>
+    </div>
+    <div class="player">
+  <img id="cover" src="images/cover1.webp" alt="Portada de la canción" width="56" height="56">
+  <div class="title" id="song">Legends</div>
+  <div class="ctrl">
+    <button id="prev" aria-label="Anterior"><i class="fas fa-backward"></i></button>
+    <button id="play" aria-label="Reproducir"><i class="fas fa-play"></i></button>
+    <button id="next" aria-label="Siguiente"><i class="fas fa-forward"></i></button>
+    <input id="seek" type="range" min="0" max="100" value="0" aria-label="Posición de la canción">
+    <audio id="audio" preload="none"></audio>
+  </div>
+</div>
+  </div>
+</div></section>
+
+<section id="sobre-mi" class="alt"><div class="wrap split">
+  <div>
+    <h2>Sobre mí</h2>
+    <p>Soy Aitor, conocido como Pollito. Creo contenido de videojuegos, subo clips y hago directos. Me apasiona mejorar mi setup, optimizar configuraciones y compartir lo que aprendo con la comunidad.</p>
+  </div>
+  <ul class="list">
+    <li>Edición de vídeo</li><li>Directos en Twitch</li><li>Ajustes de juego</li><li>Comunidad y moderación</li><li>Montaje de PCs</li>
+  </ul>
+</div></section>
+
+<section id="setup"><div class="wrap">
+  <h2>Mi setup</h2>
+  <dl class="specs">
+    <dt>Procesador</dt><dd>Ryzen 7 7700X</dd>
+    <dt>Gráfica</dt><dd>RTX 5070</dd>
+    <dt>Memoria</dt><dd>32GB DDR5</dd>
+    <dt>Monitor</dt><dd>AOC 25G3ZM<span>240 Hz</span></dd>
+    <dt>Ratón</dt><dd>Razer Viper V3 Pro</dd>
+    <dt>Teclado</dt><dd>Apex Pro TKL</dd>
+  </dl>
+</div></section>
+
+<section id="clips" class="alt"><div class="wrap">
+  <h2>Clips destacados</h2>
+  <div class="clips">
+    <button class="clip" data-title="Clip destacado #1" data-desc="Clip de Twitch." data-img="images/project1.webp" data-link="https://www.twitch.tv/aitorgs10/clip/ExuberantBoxyLapwingFunRun-XCbocYmGXAchrtom">
+      <img src="images/project1.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #1</h3><p>Twitch</p></button>
+    <button class="clip" data-title="Clip destacado #2" data-desc="2 HS con la Desert Eagle." data-img="images/project2.webp" data-link="https://www.twitch.tv/aitorgs10/clip/BovineModernKangarooTBCheesePull-E47AoyQ7fmG8jhPP">
+      <img src="images/project2.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #2</h3><p>Twitch · Desert Eagle</p></button>
+    <button class="clip" data-title="Clip destacado #3" data-desc="ACE en CS2." data-img="images/project3.webp" data-link="https://www.youtube.com/watch?v=1we2a8qryic">
+      <img src="images/project3.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #3</h3><p>YouTube · ACE</p></button>
+  </div>
+</div></section>
+
+<section id="redes"><div class="wrap">
+  <h2>Redes<small>Directos, clips y contenido nuevo en mis plataformas.</small></h2>
+  <div class="links">
+    <a href="https://youtube.com/@pollito-p7k" target="_blank" rel="noopener"><i class="fab fa-youtube"></i><strong>YouTube</strong><span>@pollito-p7k</span></a>
+    <a href="https://twitch.tv/pollito1437" target="_blank" rel="noopener"><i class="fab fa-twitch"></i><strong>Twitch</strong><span>aitorgs10</span></a>
+    <a href="https://www.tiktok.com/@pollito99998" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i><strong>TikTok</strong><span>@pollito99998</span></a>
+    <a href="https://x.com/pollito1337" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i><strong>X</strong><span>@pollito1337</span></a>
+  </div>
+</div></section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-title">
+  <button class="dlg-x" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+  <img id="dlg-img" src="" alt="">
+  <div class="dlg-body">
+    <h3 id="dlg-title"></h3><p id="dlg-desc"></p>
+    <div class="actions"><a id="dlg-link" class="btn gold" href="#" target="_blank" rel="noopener">Abrir clip</a><button class="btn dlg-close">Cerrar</button></div>
+  </div>
+</dialog>
+
+<footer><div class="wrap"><span>© <span id="year">2026</span> Pollito</span><span><a href="#clips">Clips</a> · <a href="cs2.html">Config CS2</a></span></div></footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0f0d0e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐥</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Config de CS2 · Pollito</title>
+<meta name="description" content="Mi sensibilidad, resolución y ajustes de CS2, con descarga de la config.">
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html">Pollito</a>
+  <a class="btn" href="index.html">Volver al inicio</a>
+</div></header>
+
+<main id="main">
+<div class="page-head"><div class="wrap">
+  <h1>Mi config de CS2</h1>
+  <p>Llevo 3 años jugando a Counter-Strike, aunque en otras cuentas. Empecé por diversión y hace un año empecé a tomármelo en serio.</p>
+  <div class="actions">
+    <a class="btn gold" href="download/config.7z" download><i class="fas fa-download"></i> Descargar config (.7z)</a>
+    <button class="btn" id="copy"><i class="far fa-copy"></i> <span>Copiar comandos</span></button>
+  </div>
+</div></div>
+
+<section class="alt"><div class="wrap">
+  <h2>Ajustes</h2>
+  <dl class="specs">
+    <dt>Sensibilidad</dt><dd>0.525<span>DPI 1600 · eDPI 891</span></dd>
+    <dt>Zoom</dt><dd>1.00</dd>
+    <dt>Sensibilidad de Windows</dt><dd>6/11</dd>
+    <dt>Polling rate</dt><dd>2000 Hz</dd>
+    <dt>Resolución</dt><dd>1280×960<span>4:3</span></dd>
+    <dt>Modo</dt><dd>Pantalla completa</dd>
+  </dl>
+</div></section>
+
+<section><div class="wrap">
+  <h2>En consola</h2>
+<pre id="cmds">sensitivity "0.525"
+zoom_sensitivity_ratio_mouse "1.0"</pre>
+</div></section>
+<section class="alt"><div class="wrap">
+  <h2>Calculadora de sensibilidad</h2>
+  <div class="tool">
+    <div class="fields">
+      <label>Sensibilidad<input id="c-sens" type="number" step="0.001" value="0.557"></label>
+      <label>DPI<input id="c-dpi" type="number" step="50" value="1600"></label>
+    </div>
+    <dl class="specs"><dt>eDPI</dt><dd id="r-edpi"></dd><dt>cm por 360°</dt><dd id="r-cm"></dd><dt>Valorant (mismo cm/360)</dt><dd id="r-val"></dd></dl>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Mi crosshair</h2>
+  <pre id="mycode">CS8TWmfeJd5eisDnDua6LNqedWUokYnGnfDAFZCHGF4vyj</pre>
+  <div class="actions" style="margin-top:14px"><button class="btn gold" id="copycode"><i class="far fa-copy"></i> <span>Copiar código</span></button></div>
+  <p class="mute" style="font-size:15px;margin-top:14px">En el juego: Ajustes, pestaña Crosshair/Scopes, Share o Import, y pega el código.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Generador de crosshair<small>Actualizado al sistema de píxeles que Valve lanzó en septiembre de 2026.</small></h2>
+  <div class="tool">
+    <div class="fields">
+      <label>Longitud (px) <output id="o-len"></output><input id="x-len" type="range" min="0" max="20" step="1" value="7"></label>
+      <label>Grosor (px) <output id="o-th"></output><input id="x-th" type="range" min="0" max="6" step="1" value="2"></label>
+      <label>Hueco (px) <output id="o-gap"></output><input id="x-gap" type="range" min="0" max="12" step="1" value="4"></label>
+      <label>Opacidad <output id="o-a"></output><input id="x-a" type="range" min="0" max="255" step="5" value="255"></label>
+      <label>Color<input id="x-color" type="color" value="#00ff66"></label>
+      <label>Altura de pantalla
+        <select id="x-h"><option>720</option><option>768</option><option>900</option><option selected>960</option><option>1080</option><option>1440</option><option>2160</option></select></label>
+      <label class="chk"><input id="x-out" type="checkbox" checked> Contorno negro</label>
+      <label class="chk"><input id="x-dot" type="checkbox"> Punto central</label>
+      <label class="chk"><input id="x-t" type="checkbox"> Estilo T (sin línea superior)</label>
+    </div>
+    <div>
+      <div class="preview" id="preview" aria-label="Vista previa aproximada del crosshair"></div>
+      <p class="mute" style="font-size:14px;margin:-6px 0 14px">Vista aproximada ampliada ×3. Los tamaños son píxeles a la altura de pantalla elegida; el juego los reescala a tu resolución.</p>
+      <pre id="xcmds"></pre>
+      <button class="btn" id="copyx" style="margin-top:12px"><i class="far fa-copy"></i> <span>Copiar crosshair</span></button>
+      <button class="btn" id="dlcfg" style="margin-top:12px"><i class="fas fa-file-arrow-down"></i> <span>Descargar autoexec.cfg</span></button>
+      <p class="mute" style="font-size:14px;margin-top:10px">El .cfg incluye tu sensibilidad de la calculadora y este crosshair. Guárdalo en la carpeta cfg del juego y ejecútalo con <code>exec autoexec</code> en la consola.</p>
+      <p class="mute" style="font-size:14px;margin-top:14px">Para compartir el tuyo exacto, en el juego usa la pestaña Crosshair/Scopes y la opción Share. Los códigos viejos que empiezan por CSGO- ya no se pueden importar.</p>
+    </div>
+  </div>
+</div></section>
+<section class="alt"><div class="wrap">
+  <h2>Aim trainer<small>30 segundos. Haz clic en los objetivos y no falles.</small></h2>
+  <div class="hud"><span>Tiempo <b id="a-time">30</b></span><span>Aciertos <b id="a-hits">0</b></span><span>Precisión <b id="a-acc">—</b></span><span>Reacción <b id="a-rt">—</b></span><span>Récord <b id="a-best">0</b></span></div>
+  <div id="arena" class="arena"><button class="btn gold" id="a-start">Empezar</button></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="year">2026</span> Pollito</span><a href="index.html#redes">Mis redes</a></div></footer>
+<script src="js/script.js" defer></script>
+</body>
+</html>
