@@ -1,9 +1,9 @@
 const $ = s => document.querySelector(s);
 
-// Año del footer
+
 const year = $('#year'); if (year) year.textContent = new Date().getFullYear();
 
-// Menú móvil
+
 const toggle = $('.nav-toggle'), menu = $('#menu');
 if (toggle) {
   toggle.addEventListener('click', () => {
@@ -13,7 +13,7 @@ if (toggle) {
   menu.addEventListener('click', e => { if (e.target.closest('a')) { menu.classList.remove('open'); toggle.setAttribute('aria-expanded', false); } });
 }
 
-// Modal de clips (<dialog> nativo: Esc y foco ya vienen resueltos)
+
 const dlg = $('#dlg');
 if (dlg) {
   document.querySelectorAll('.clip').forEach(c => c.addEventListener('click', () => {
@@ -27,12 +27,12 @@ if (dlg) {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 }
 
-// Reproductor (solo suena cuando pulsas play)
+
 const audio = $('#audio');
 if (audio) {
   const playlist = [
     { name: 'Legends', cover: 'images/cover1.webp', file: 'music/Legends.mp3' },
-    { name: 'All Girls Are The Same', cover: 'images/cover2.webp', file: 'music/All Girls Are The Same.mp3' },
+    { name: 'D E A T H M E T A L', cover: 'images/cover2.webp', file: 'music/D E A T H M E T A L.mp3' },
     { name: 'Lovers Rock', cover: 'images/cover3.webp', file: 'music/Lovers Rock.mp3' }
   ];
   let idx = 0;
@@ -60,7 +60,7 @@ if (audio) {
   load(0);
 }
 
-// Copiar comandos (cs2.html)
+
 const copy = $('#copy');
 if (copy) copy.addEventListener('click', async () => {
   const label = copy.querySelector('span');
@@ -69,7 +69,7 @@ if (copy) copy.addEventListener('click', async () => {
   setTimeout(() => label.textContent = 'Copiar comandos', 1800);
 });
 
-// Portada: agujeros de bala al hacer clic
+
 const hero = $('#hero');
 if (hero) hero.addEventListener('click', e => {
   if (e.target.closest('a,button,input,.player,.scope')) return;
@@ -78,7 +78,7 @@ if (hero) hero.addEventListener('click', e => {
   hero.appendChild(h); setTimeout(() => h.remove(), 5000);
 });
 
-// Calculadora eDPI y cm/360
+
 if ($('#c-sens')) {
   const calc = () => {
     const s = parseFloat($('#c-sens').value), d = parseFloat($('#c-dpi').value);
@@ -90,7 +90,7 @@ if ($('#c-sens')) {
   ['#c-sens', '#c-dpi'].forEach(i => $(i).addEventListener('input', calc)); calc();
 }
 
-// Generador de crosshair (sistema de píxeles, sept 2026)
+
 if ($('#preview')) {
   const Z = 3, g = id => $(id);
   const upd = () => {
@@ -122,12 +122,12 @@ if ($('#preview')) {
   });
 }
 
-// Sonido sintético (sin archivos)
+
 let actx;
 const beep = (f, d = .06) => { try { actx = actx || new AudioContext(); const o = actx.createOscillator(), g = actx.createGain(); o.frequency.value = f; g.gain.value = .06; o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + d); } catch {} };
 if (hero) hero.addEventListener('click', e => { if (!e.target.closest('a,button,input,.player,.scope')) beep(180, .05); });
 
-// Aim trainer
+
 const arena = $('#arena');
 if (arena) {
   let hits, miss, left, tick, tgt, best = 0, t0, sum;
@@ -161,7 +161,7 @@ if (arena) {
   });
 }
 
-// Consola (tecla ` o botón del pie)
+
 (() => {
   const con = document.createElement('div'); con.id = 'con';
   con.innerHTML = '<div id="con-out" aria-live="polite"></div><input id="con-in" autocomplete="off" spellcheck="false" aria-label="Consola" placeholder="escribe help">';
@@ -191,7 +191,7 @@ if (arena) {
   if (f) { const b = document.createElement('button'); b.className = 'con-btn'; b.textContent = 'consola'; b.addEventListener('click', () => toggle(true)); f.appendChild(b); }
 })();
 
-// Copiar mi código de crosshair
+
 const cc = $('#copycode');
 if (cc) cc.addEventListener('click', async () => {
   const l = cc.querySelector('span');
@@ -199,7 +199,7 @@ if (cc) cc.addEventListener('click', async () => {
   setTimeout(() => l.textContent = 'Copiar código', 1800);
 });
 
-// Descargar autoexec.cfg (sensibilidad + crosshair del generador)
+
 const dl = $('#dlcfg');
 if (dl) dl.addEventListener('click', () => {
   const sens = parseFloat($('#c-sens').value) || 0.557;
