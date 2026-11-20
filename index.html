@@ -81,8 +81,8 @@
 <section id="clips" class="alt"><div class="wrap">
   <h2>Clips destacados</h2>
   <div class="clips">
-    <button class="clip" data-title="Clip destacado #1" data-desc="Clip de Twitch." data-img="images/project1.webp" data-link="https://www.twitch.tv/pollito1437/clip/ExuberantBoxyLapwingFunRun-XCbocYmGXAchrtom">
-      <img src="images/project1.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #1</h3><p>Twitch</p></button>
+    <button class="clip" data-title="Clip destacado #1" data-desc="Clip clutch." data-img="images/project1.webp" data-video="videos/clip1.mp4">
+      <img src="images/project1.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #1</h3><p>Vídeo</p></button>
     <button class="clip" data-title="Clip destacado #2" data-desc="2 HS con la Desert Eagle." data-img="images/project2.webp" data-link="https://www.twitch.tv/pollito1437/clip/ArborealHonorableBatKappaClaus-0K0LRJSOPQKZbqEJ?range=all">
       <img src="images/project2.webp" alt="" loading="lazy" width="640" height="360"><h3>Clip destacado #2</h3><p>Twitch · 3 taps</p></button>
     <button class="clip" data-title="Clip destacado #3" data-desc="ACE en CS2." data-img="images/project3.webp" data-link="https://www.youtube.com/watch?v=1we2a8qryic">
@@ -104,6 +104,7 @@
 <dialog id="dlg" aria-labelledby="dlg-title">
   <button class="dlg-x" aria-label="Cerrar"><i class="fas fa-times"></i></button>
   <img id="dlg-img" src="" alt="">
+  <video id="dlg-video" controls playsinline preload="none" hidden></video>
   <div class="dlg-body">
     <h3 id="dlg-title"></h3><p id="dlg-desc"></p>
     <div class="actions"><a id="dlg-link" class="btn gold" href="#" target="_blank" rel="noopener">Abrir clip</a><button class="btn dlg-close">Cerrar</button></div>

@@ -122,6 +122,8 @@ section{padding:clamp(72px,10vw,128px) 0}
 dialog{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:20px;padding:0;width:min(780px,92vw);overflow:hidden}
 dialog::backdrop{background:rgba(8,6,7,.82);backdrop-filter:blur(6px)}
 dialog img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+dialog video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#000}
+dialog [hidden]{display:none}
 .dlg-body{padding:24px 28px 28px}
 .dlg-body h3{font-size:38px;margin-bottom:8px;text-transform:uppercase}
 .dlg-body p{margin:0 0 22px;color:var(--mute)}

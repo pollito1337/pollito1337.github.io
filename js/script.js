@@ -16,13 +16,29 @@ if (toggle) {
 
 const dlg = $('#dlg');
 if (dlg) {
+  const dlgImg = $('#dlg-img'), dlgVideo = $('#dlg-video'), dlgLink = $('#dlg-link');
   document.querySelectorAll('.clip').forEach(c => c.addEventListener('click', () => {
-    $('#dlg-img').src = c.dataset.img;
     $('#dlg-title').textContent = c.dataset.title;
     $('#dlg-desc').textContent = c.dataset.desc;
-    $('#dlg-link').href = c.dataset.link;
+    if (c.dataset.video) {
+      dlgImg.hidden = true;
+      dlgVideo.hidden = false;
+      dlgVideo.poster = c.dataset.img;
+      dlgVideo.src = c.dataset.video;
+      dlgLink.href = c.dataset.video;
+    } else {
+      dlgVideo.hidden = true;
+      dlgImg.hidden = false;
+      dlgImg.src = c.dataset.img;
+      dlgLink.href = c.dataset.link;
+    }
     dlg.showModal();
   }));
+  dlg.addEventListener('close', () => {
+    dlgVideo.pause();
+    dlgVideo.removeAttribute('src');
+    dlgVideo.load();
+  });
   dlg.querySelectorAll('.dlg-x,.dlg-close').forEach(b => b.addEventListener('click', () => dlg.close()));
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
 }
